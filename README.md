@@ -11,6 +11,27 @@ Import the exported XML in Blogger → **Theme → Backup/Restore → Upload**.
 
 Built under [mergeos-bounties](https://github.com/mergeos-bounties) for MergeOS MRG bounties.
 
+
+## Screenshots
+
+Real captures from running the product demo (BloggerEasy).
+
+![Batch theme generation](docs/screenshots/demo-batch.png)
+
+*Batch theme generation*
+
+![Portfolio sample → theme](docs/screenshots/demo-portfolio.png)
+
+*Portfolio sample → theme*
+
+![News portal sample](docs/screenshots/demo-news_portal.png)
+
+*News portal sample*
+
+![Dark dev sample](docs/screenshots/demo-dark_dev.png)
+
+*Dark dev sample*
+
 ## Stack
 
 - Python 3.11+
