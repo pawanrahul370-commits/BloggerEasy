@@ -5,6 +5,18 @@ PRESETS: dict[str, dict] = {
     "magazine": {"layout_hint": "two-column", "dark": False, "dense": True},
     "dark": {"layout_hint": "two-column", "dark": True},
     "from-image": {"layout_hint": "two-column", "dark": False},
+    "portfolio": {
+        "layout_hint": "two-column",
+        "dark": False,
+        "dense": False,
+        "accent": "#c4a574",
+    },
+    "news": {
+        "layout_hint": "two-column",
+        "dark": False,
+        "dense": True,
+        "accent": "#b91c1c",
+    },
 }
 
 
@@ -23,5 +35,13 @@ def apply_preset(structure: dict, template: str) -> dict:
         colors["primary"] = colors.get("primary") or "#38bdf8"
         colors["secondary"] = colors.get("secondary") or "#818cf8"
         out["colors"] = colors
+    if preset.get("accent") and not preset.get("dark"):
+        colors = dict(out.get("colors") or {})
+        colors["primary"] = preset["accent"]
+        out["colors"] = colors
+    if preset.get("dense"):
+        feats = dict(out.get("features") or {})
+        feats["dense"] = True
+        out["features"] = feats
     out["template"] = template
     return out

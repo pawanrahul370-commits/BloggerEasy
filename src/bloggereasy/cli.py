@@ -52,9 +52,15 @@ def demo_cmd(
     table.add_column("Sample")
     table.add_column("Output")
     table.add_column("OK")
+    template_for = {
+        "portfolio.html": "portfolio",
+        "news_portal.html": "news",
+        "dark_dev.html": "dark",
+    }
     for path in samples:
         out = root / f"{path.stem}.xml"
-        result = generate_from_html(path, out, template="simple")
+        tmpl = template_for.get(path.name, "simple")
+        result = generate_from_html(path, out, template=tmpl)
         ok = "yes" if result["validation"]["ok"] else "no"
         table.add_row(path.name, str(out), ok)
     console.print(table)
