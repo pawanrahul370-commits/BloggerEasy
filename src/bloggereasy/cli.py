@@ -151,6 +151,23 @@ def preview_css(input: Path = typer.Option(..., "--input", "-i", exists=True, di
         console.print("[yellow]No skin CDATA found[/yellow]")
 
 
+@gen_app.command("preview-html")
+def preview_html_cmd(
+    input: Path = typer.Option(..., "--input", "-i", exists=True, dir_okay=False),
+    out: Path | None = typer.Option(None, "--out", "-o"),
+    template: str = typer.Option("simple", "--template", "-t"),
+) -> None:
+    """Write a static HTML mock of the theme structure (open in any browser)."""
+    from bloggereasy.config import OUT_DIR
+    from bloggereasy.theme.presets import apply_preset
+    from bloggereasy.theme.preview import write_preview_html
+
+    structure = apply_preset(parse_html_file(input), template)
+    path = out or (OUT_DIR / f"{input.stem}-preview.html")
+    write_preview_html(structure, path)
+    console.print(f"[green]Preview[/green] {path}")
+
+
 @app.command("validate")
 def validate_cmd(file: Path = typer.Option(..., "--file", "-f", exists=True, dir_okay=False)) -> None:
     result = validate_theme_file(file)
