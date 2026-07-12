@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Editorial magazine layout demo for BloggerEasy" />
+  <title>Northwind Review</title>
+  <style>
+    body {
+      font-family: "Iowan Old Style", Georgia, serif;
+      color: #1c1917;
+      background: #faf7f2;
+      margin: 0;
+    }
+    header.mast {
+      border-bottom: 4px solid #b45309;
+      padding: 1.5rem 2rem;
+      background: #fffbeb;
+    }
+    header.mast h1 {
+      font-size: 2.4rem;
+      letter-spacing: 0.04em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .deck { color: #78716c; font-style: italic; margin-top: 0.35rem; }
+    nav.issue {
+      display: flex;
+      gap: 1.25rem;
+      padding: 0.75rem 2rem;
+      background: #1c1917;
+    }
+    nav.issue a { color: #fde68a; text-decoration: none; font-family: system-ui, sans-serif; font-size: 0.9rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+    }
+    article.feature {
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      padding: 1.5rem;
+    }
+    article.feature h2 { color: #9a3412; margin-top: 0; }
+    aside.rail {
+      background: #fff7ed;
+      border: 1px dashed #fdba74;
+      padding: 1rem;
+    }
+    .kicker {
+      font-family: system-ui, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #b45309;
+    }
+    footer {
+      text-align: center;
+      padding: 1.25rem;
+      color: #a8a29e;
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="kicker">Issue 12 · Culture</div>
+    <h1>Northwind Review</h1>
+    <p class="deck">Long-form essays and visual stories for curious readers.</p>
+  </header>
+  <nav class="issue">
+    <a href="/">Cover</a>
+    <a href="/essays">Essays</a>
+    <a href="/photo">Photo</a>
+    <a href="/archive">Archive</a>
+  </nav>
+  <div class="grid">
+    <article class="feature">
+      <div class="kicker">Cover story</div>
+      <h2>Designing calm interfaces</h2>
+      <p>
+        A walk through typography, whitespace, and the quiet details that make digital products
+        feel trustworthy. Includes a sidebar of print-inspired layout cues.
+      </p>
+      <p>By A. Rivera · 12 min read</p>
+    </article>
+    <aside class="rail">
+      <div class="kicker">In this issue</div>
+      <ul>
+        <li>Editorial grids that breathe</li>
+        <li>Color without noise</li>
+        <li>Columnist notes</li>
+      </ul>
+    </aside>
+  </div>
+  <footer>© Northwind Review · Demo HTML for BloggerEasy magazine template</footer>
+</body>
+</html>
