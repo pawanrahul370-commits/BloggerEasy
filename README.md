@@ -5,9 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![MergeOS](https://img.shields.io/badge/MergeOS-bounties-5319E7.svg)](https://github.com/mergeos-bounties)
 
-**BloggerEasy** turns HTML pages (and optional design images/URLs) into **importable Blogger XML themes** — layout, CSS, sections, and widgets ready for Blogger → Theme → Backup/Restore → Upload.
+**BloggerEasy** converts HTML pages into **importable Blogger XML themes** — layout, CSS, sections, and widgets ready for Blogger → Theme → Backup/Restore → Upload.
 
-Product source: [mergeos-bounties/BloggerEasy](https://github.com/mergeos-bounties/BloggerEasy)
+**Product:** [mergeos-bounties/BloggerEasy](https://github.com/mergeos-bounties/BloggerEasy)
 
 ---
 
@@ -19,7 +19,7 @@ Product source: [mergeos-bounties/BloggerEasy](https://github.com/mergeos-bounti
 - [CLI reference](#cli-reference)
 - [Templates & samples](#templates--samples)
 - [Diagrams](#diagrams)
-- [Architecture](#architecture)
+- [Repository layout](#repository-layout)
 - [Development](#development)
 - [MergeOS bounties](#mergeos-bounties)
 - [License](#license)
@@ -31,10 +31,10 @@ Product source: [mergeos-bounties/BloggerEasy](https://github.com/mergeos-bounti
 | Capability | Description |
 | --- | --- |
 | **HTML → theme** | Parse local HTML samples into validated Blogger XML |
-| **Templates** | Built-in presets: simple, portfolio, news, dark, … |
+| **Templates** | Built-in presets: `simple`, `portfolio`, `news`, `dark`, … |
 | **Batch demo** | `bloggereasy demo` generates themes for every sample |
 | **Validate** | Check theme structure before upload |
-| **Optional serve** | Thin FastAPI for integrations (`pip install -e ".[dev]"`) |
+| **Optional API** | Thin FastAPI for integrations (`bloggereasy serve`) |
 
 ---
 
@@ -67,7 +67,7 @@ bloggereasy demo
 bloggereasy templates list
 ```
 
-Import any XML under `data/out/demo/` (or configured `OUT_DIR`) in Blogger.
+Import any XML under `data/out/demo/` (or configured `OUT_DIR`) in Blogger → Theme → Backup/Restore → Upload.
 
 ---
 
@@ -103,18 +103,16 @@ Samples live in `data/samples/html/`. Prefer official/public page structure when
 
 ---
 
-
 ## Diagrams
 
-System architecture and workflow — shown full-width below.  
-Open the HTML files for **dark/light theme toggle** and export (PNG/SVG).
+System architecture and workflow — full width. Open the HTML files for **dark/light theme** and export (PNG/SVG).
 
 ### Architecture
 
 [Open interactive diagram](docs/diagrams/architecture.html)
 
 <p align="center">
-  <img src="docs/diagrams/architecture.svg" alt="Architecture diagram" width="100%" />
+  <img src="docs/diagrams/architecture.svg" alt="BloggerEasy architecture" width="100%" />
 </p>
 
 ### Workflow
@@ -122,12 +120,14 @@ Open the HTML files for **dark/light theme toggle** and export (PNG/SVG).
 [Open interactive diagram](docs/diagrams/workflow.html)
 
 <p align="center">
-  <img src="docs/diagrams/workflow.svg" alt="Workflow diagram" width="100%" />
+  <img src="docs/diagrams/workflow.svg" alt="BloggerEasy workflow" width="100%" />
 </p>
 
 *Generated with [archify](https://github.com/tt-a1i).*
 
-## Architecture
+---
+
+## Repository layout
 
 ```text
 src/bloggereasy/
@@ -139,6 +139,7 @@ src/bloggereasy/
   integrations/sdk.py # HTML / URL / image entrypoints
 data/samples/html/    # Demo pages
 docs/screenshots/     # README gallery
+docs/diagrams/        # Architecture + workflow
 ```
 
 ---
@@ -155,10 +156,10 @@ bloggereasy demo
 
 ## MergeOS bounties
 
-1. Star this repo + [mergeos](https://github.com/mergeos-bounties/mergeos)  
-2. Claim a `bounty` issue · Claim Token [mergeos#1](https://github.com/mergeos-bounties/mergeos/issues/1)  
-3. PR to **master** with tests / theme XML evidence  
-4. MRG credit **25 / 50 / 100 / 200** after merge  
+1. Star this repo + [mergeos](https://github.com/mergeos-bounties/mergeos)
+2. Claim a `bounty` issue · Claim Token [mergeos#1](https://github.com/mergeos-bounties/mergeos/issues/1)
+3. PR to **master** with tests / theme XML evidence
+4. MRG credit **25 / 50 / 100 / 200** after merge
 
 See [docs/BOUNTY.md](docs/BOUNTY.md) if present.
 
@@ -166,7 +167,7 @@ See [docs/BOUNTY.md](docs/BOUNTY.md) if present.
 
 ## Tiếng Việt
 
-**BloggerEasy** tạo theme XML Blogger từ HTML mẫu (offline demo). Chạy `bloggereasy demo` → upload XML trong Blogger Theme → Backup/Restore.
+**BloggerEasy** tạo theme XML Blogger từ HTML mẫu (offline). Chạy `bloggereasy demo` → upload XML trong Blogger Theme → Backup/Restore.
 
 ---
 
