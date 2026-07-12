@@ -1,0 +1,1 @@
+"""Image → design hints."""
