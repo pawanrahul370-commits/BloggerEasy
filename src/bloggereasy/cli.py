@@ -153,5 +153,20 @@ def validate_cmd(file: Path = typer.Option(..., "--file", "-f", exists=True, dir
         raise typer.Exit(1)
 
 
+@app.command("serve")
+def serve_cmd(
+    host: str = typer.Option("127.0.0.1", "--host"),
+    port: int = typer.Option(8765, "--port", min=1, max=65535),
+) -> None:
+    """Run FastAPI server (requires: pip install -e '.[api]')."""
+    try:
+        import uvicorn
+    except ImportError as exc:
+        console.print("[red]Install API extra:[/red] pip install -e \".[api]\"")
+        raise typer.Exit(1) from exc
+    console.print(f"Serving http://{host}:{port}/health")
+    uvicorn.run("bloggereasy.api.app:app", host=host, port=port, log_level="info")
+
+
 if __name__ == "__main__":
     app()

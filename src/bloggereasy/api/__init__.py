@@ -1,1 +1,1 @@
-"""Optional FastAPI surface (bounty)."""
+"""Optional FastAPI app: `uvicorn bloggereasy.api.app:app`."""
