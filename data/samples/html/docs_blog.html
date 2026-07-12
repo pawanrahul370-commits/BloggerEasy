@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MergeOS Engineering Notes</title>
+  <meta name="description" content="Tech/docs blog sample for BloggerEasy" />
+  <style>
+    body { margin:0; font-family: Georgia, 'Times New Roman', serif; color:#1e293b; background:#fffef8; line-height:1.65; }
+    .wrap { max-width:720px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+    .kicker { font-family: system-ui,sans-serif; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:#64748b; }
+    h1 { font-size:2.1rem; margin:0.4rem 0 0.75rem; }
+    .meta { font-family: system-ui,sans-serif; color:#64748b; font-size:0.9rem; margin-bottom:2rem; }
+    pre { background:#0f172a; color:#e2e8f0; padding:1rem 1.1rem; border-radius:10px; overflow:auto; font-size:0.9rem; }
+    code { font-family: ui-monospace, Consolas, monospace; }
+    .callout { border-left:4px solid #0ea5e9; background:#f0f9ff; padding:0.9rem 1rem; margin:1.5rem 0; border-radius:0 8px 8px 0; }
+    footer { margin-top:3rem; font-family: system-ui,sans-serif; color:#94a3b8; font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <article class="wrap">
+    <div class="kicker">Engineering · Theme automation</div>
+    <h1>From HTML mockup to Blogger XML in one pass</h1>
+    <p class="meta">Sample docs post · BloggerEasy fixture</p>
+    <p>Product teams often design a marketing page first, then rebuild it inside Blogger by hand.
+    This fixture shows a documentation-style layout that BloggerEasy should convert cleanly.</p>
+    <div class="callout"><strong>Tip:</strong> Prefer semantic headings and one primary CTA so palette extraction stays stable.</div>
+    <h2>CLI sketch</h2>
+    <pre><code>bloggereasy gen --html data/samples/html/docs_blog.html --out out/docs_blog.xml</code></pre>
+    <h2>What to preserve</h2>
+    <ul>
+      <li>Title and meta description</li>
+      <li>Code blocks without broken entities</li>
+      <li>Callout borders as simple blockquotes if needed</li>
+    </ul>
+    <footer>Demo HTML · BloggerEasy docs_blog</footer>
+  </article>
+</body>
+</html>
