@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pricing — Starter / Pro / Team</title>
+  <meta name="description" content="Pricing table sample for BloggerEasy" />
+  <style>
+    body { margin:0; font-family: system-ui,sans-serif; background:#0b1220; color:#e2e8f0; }
+    header { text-align:center; padding:2.75rem 1.25rem 1rem; }
+    header h1 { margin:0; font-size:clamp(1.6rem,4vw,2.2rem); }
+    header p { color:#94a3b8; margin:0.6rem 0 0; }
+    .plans { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; max-width:960px; margin:1.5rem auto 3rem; padding:0 1rem; }
+    .card { background:#111827; border:1px solid #1f2937; border-radius:16px; padding:1.35rem; }
+    .card.featured { border-color:#22d3ee; box-shadow:0 0 0 1px rgba(34,211,238,0.25); }
+    .price { font-size:2rem; font-weight:700; margin:0.75rem 0; }
+    .price span { font-size:0.95rem; color:#94a3b8; font-weight:500; }
+    ul { margin:0; padding-left:1.1rem; color:#cbd5e1; line-height:1.7; }
+    .cta { display:block; text-align:center; margin-top:1.25rem; background:#22d3ee; color:#0f172a;
+           font-weight:700; padding:0.7rem 1rem; border-radius:999px; text-decoration:none; }
+    footer { text-align:center; color:#64748b; padding:2rem; font-size:0.85rem; }
+    @media (max-width:760px) { .plans { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Simple pricing</h1>
+    <p>Sample SaaS tiers for theme conversion demos.</p>
+  </header>
+  <section class="plans">
+    <div class="card"><h2>Starter</h2><div class="price">$0 <span>/mo</span></div>
+      <ul><li>3 themes</li><li>URL import</li><li>Community support</li></ul>
+      <a class="cta" href="#">Start free</a></div>
+    <div class="card featured"><h2>Pro</h2><div class="price">$19 <span>/mo</span></div>
+      <ul><li>Unlimited themes</li><li>Batch export</li><li>Priority support</li></ul>
+      <a class="cta" href="#">Go Pro</a></div>
+    <div class="card"><h2>Team</h2><div class="price">$49 <span>/mo</span></div>
+      <ul><li>Shared workspace</li><li>SSO-ready</li><li>Audit log</li></ul>
+      <a class="cta" href="#">Contact sales</a></div>
+  </section>
+  <footer>Demo HTML · BloggerEasy pricing_table</footer>
+</body>
+</html>
