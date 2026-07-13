@@ -37,6 +37,45 @@ def version_cmd() -> None:
     console.print(f"Templates: {', '.join(PRESETS)}")
 
 
+@app.command("samples")
+def samples_cmd() -> None:
+    """List HTML fixtures under data/samples/html with sizes (fixture inventory)."""
+    html_dir = SAMPLES_DIR / "html"
+    files = sorted(html_dir.glob("*.html")) if html_dir.is_dir() else []
+    table = Table(title=f"HTML samples ({len(files)})")
+    table.add_column("File")
+    table.add_column("Bytes", justify="right")
+    table.add_column("Title (heuristic)")
+    for path in files:
+        title = path.stem.replace("_", " ")
+        try:
+            head = path.read_text(encoding="utf-8", errors="ignore")[:800]
+            if "<title>" in head and "</title>" in head:
+                title = head.split("<title>", 1)[1].split("</title>", 1)[0].strip()[:48]
+        except OSError:
+            pass
+        table.add_row(path.name, str(path.stat().st_size), title)
+    console.print(table)
+    console.print(f"[dim]dir[/dim] {html_dir}")
+
+
+@app.command("stats")
+def stats_cmd() -> None:
+    """Quick inventory: templates, samples, last demo outputs."""
+    html_n = len(list((SAMPLES_DIR / "html").glob("*.html"))) if (SAMPLES_DIR / "html").is_dir() else 0
+    demo_n = len(list((OUT_DIR / "demo").glob("*.xml"))) if (OUT_DIR / "demo").is_dir() else 0
+    console.print_json(
+        data={
+            "version": __version__,
+            "templates": list(PRESETS.keys()),
+            "html_samples": html_n,
+            "demo_xml_outputs": demo_n,
+            "samples_dir": str(SAMPLES_DIR / "html"),
+            "out_dir": str(OUT_DIR),
+        }
+    )
+
+
 @app.command("demo")
 def demo_cmd(
     out_dir: Path = typer.Option(None, "--out-dir", "-o"),
