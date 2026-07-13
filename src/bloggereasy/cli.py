@@ -76,6 +76,35 @@ def stats_cmd() -> None:
     )
 
 
+@app.command("validate-samples")
+def validate_samples_cmd() -> None:
+    """Generate + validate every HTML fixture (CI-friendly fixture gate)."""
+    html_dir = SAMPLES_DIR / "html"
+    samples = sorted(html_dir.glob("*.html")) if html_dir.is_dir() else []
+    if not samples:
+        console.print("[red]No HTML samples[/red]")
+        raise typer.Exit(1)
+    root = OUT_DIR / "validate_samples"
+    root.mkdir(parents=True, exist_ok=True)
+    ok_n = 0
+    table = Table(title="Validate samples")
+    table.add_column("Sample")
+    table.add_column("OK")
+    table.add_column("Errors")
+    for path in samples:
+        out = root / f"{path.stem}.xml"
+        result = generate_from_html(path, out, template="simple")
+        ok = bool(result.get("validation", {}).get("ok"))
+        errs = result.get("validation", {}).get("errors") or []
+        if ok:
+            ok_n += 1
+        table.add_row(path.name, "yes" if ok else "no", str(len(errs)))
+    console.print(table)
+    console.print(f"[green]{ok_n}/{len(samples)} ok[/green] → {root}")
+    if ok_n < len(samples):
+        raise typer.Exit(1)
+
+
 @app.command("demo")
 def demo_cmd(
     out_dir: Path = typer.Option(None, "--out-dir", "-o"),
