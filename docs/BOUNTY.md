@@ -2,11 +2,12 @@
 
 ## Before you start
 
-1. Star https://github.com/mergeos-bounties/BloggerEasy  
-2. Star https://github.com/mergeos-bounties/mergeos  
-3. Comment: `I claim this bounty` on the issue  
-4. Comment on MergeOS [Claim Token #1](https://github.com/mergeos-bounties/mergeos/issues/1)  
-5. PR to **BloggerEasy** `master` (`Fixes #N`)
+1. **Follow** the org https://github.com/mergeos-bounties  
+2. **Star** https://github.com/mergeos-bounties/mergeos  
+3. **Star** https://github.com/mergeos-bounties/mergeos-contracts
+4. Comment: `I claim this bounty` on the issue  
+5. Comment on MergeOS [Claim Token #1](https://github.com/mergeos-bounties/mergeos/issues/1)  
+6. PR to **BloggerEasy** `master` (`Fixes #N`)
 
 ## Payout scale
 
