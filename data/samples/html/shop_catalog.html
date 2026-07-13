@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shop catalog sample</title>
+  <meta name="description" content="Product grid catalog sample for BloggerEasy" />
+  <style>
+    body { margin:0; font-family: system-ui, sans-serif; background:#fafafa; color:#111; }
+    header { padding:1.5rem; background:#111; color:#fff; }
+    header h1 { margin:0; font-size:1.4rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; padding:1.25rem; max-width:960px; margin:0 auto; }
+    .card { background:#fff; border:1px solid #e5e5e5; border-radius:10px; overflow:hidden; }
+    .swatch { height:100px; background:linear-gradient(135deg,#93c5fd,#c4b5fd); }
+    .card h2 { margin:0.75rem 0.75rem 0.25rem; font-size:1rem; }
+    .card p { margin:0 0.75rem 0.9rem; color:#666; font-size:0.85rem; }
+    .price { font-weight:700; color:#0f766e; }
+    footer { text-align:center; color:#999; padding:1rem; font-size:0.8rem; }
+  </style>
+</head>
+<body>
+  <header><h1>MergeOS merch catalog</h1></header>
+  <div class="grid">
+    <article class="card"><div class="swatch"></div><h2>Sticker pack</h2><p class="price">$6</p></article>
+    <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#fcd34d,#f97316)"></div><h2>Tee — ship notes</h2><p class="price">$24</p></article>
+    <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#86efac,#22c55e)"></div><h2>Mug — offline first</h2><p class="price">$16</p></article>
+  </div>
+  <footer>Demo HTML · BloggerEasy shop_catalog</footer>
+</body>
+</html>
