@@ -231,19 +231,6 @@ See [mergeos](https://github.com/mergeos-bounties/mergeos) · [docs/BOUNTY.md](d
 
 ---
 
-## Tiếng Việt
-
-**BloggerEasy** tạo theme XML Blogger từ **URL web** hoặc **ảnh thiết kế** (GUI Qt).
-
-```powershell
-pip install -e ".[gui]"
-bloggereasy-gui
-```
-
-Upload file `.xml` trong Blogger → Theme → Backup/Restore.
-
----
-
 ## License
 
 MIT · MergeOS / ThanhTrucSolutions
