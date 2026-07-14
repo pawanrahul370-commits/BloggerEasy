@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><title>Pricing comparison sample</title>
+<style>
+body{margin:0;font-family:system-ui,sans-serif;background:#0b1220;color:#e2e8f0}
+.wrap{max-width:900px;margin:0 auto;padding:2rem 1rem}
+h1{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.card{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:1.25rem}
+.price{font-size:1.75rem;font-weight:700;color:#a5b4fc}
+.feat{color:#94a3b8;font-size:.9rem;margin:.35rem 0}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<h1>Pricing</h1>
+<div class="grid">
+<div class="card"><h2>Starter</h2><div class="price">$9</div><div class="feat">1 site</div><div class="feat">Email support</div></div>
+<div class="card"><h2>Pro</h2><div class="price">$29</div><div class="feat">5 sites</div><div class="feat">Priority support</div></div>
+<div class="card"><h2>Team</h2><div class="price">$79</div><div class="feat">Unlimited</div><div class="feat">SSO</div></div>
+</div></div></body></html>
