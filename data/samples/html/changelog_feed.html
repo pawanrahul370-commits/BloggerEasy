@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Changelog feed sample</title>
+  <meta name="description" content="Product changelog feed for BloggerEasy theme demos" />
+  <style>
+    body { margin:0; font-family: system-ui,sans-serif; background:#0f172a; color:#e2e8f0; }
+    .wrap { max-width:720px; margin:0 auto; padding:2rem 1rem 3rem; }
+    h1 { font-size:1.75rem; margin:0 0 .5rem; }
+    .sub { color:#94a3b8; margin-bottom:1.5rem; }
+    .item { border:1px solid #1e293b; border-radius:12px; padding:1rem 1.15rem; margin:.75rem 0; background:#111827; }
+    .tag { display:inline-block; font-size:.75rem; padding:.15rem .5rem; border-radius:999px; background:#1d4ed8; color:#dbeafe; }
+    .tag.fix { background:#15803d; color:#dcfce7; }
+    .tag.break { background:#b45309; color:#ffedd5; }
+    time { color:#64748b; font-size:.85rem; float:right; }
+    h2 { font-size:1.05rem; margin:.35rem 0; }
+    p { color:#cbd5e1; line-height:1.5; margin:.4rem 0 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Product changelog</h1>
+    <p class="sub">Sample HTML for BloggerEasy theme conversion demos.</p>
+    <article class="item">
+      <time>2026-07-14</time>
+      <span class="tag">feature</span>
+      <h2>v0.3.22 — Offline sample pack</h2>
+      <p>Added changelog feed fixture and refreshed validate-samples coverage.</p>
+    </article>
+    <article class="item">
+      <time>2026-07-10</time>
+      <span class="tag fix">fix</span>
+      <h2>v0.3.21 — Theme CSS scrub</h2>
+      <p>Normalize mobile breakpoints in magazine and portfolio templates.</p>
+    </article>
+    <article class="item">
+      <time>2026-07-01</time>
+      <span class="tag break">breaking</span>
+      <h2>v0.3.0 — CLI regroup</h2>
+      <p>Generator commands moved under gen subcommand; see migration notes.</p>
+    </article>
+  </div>
+</body>
+</html>
