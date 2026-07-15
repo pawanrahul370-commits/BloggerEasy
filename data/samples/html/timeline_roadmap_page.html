@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Timeline Roadmap</title>
+  <meta name="description" content="Timeline roadmap HTML fixture for BloggerEasy" />
+  <style>
+    body { margin:0; font-family:system-ui,sans-serif; background:#f8fafc; color:#0f172a; }
+    header { text-align:center; padding:2.5rem 1rem 1rem; }
+    main { max-width:720px; margin:0 auto; padding:1rem 1.25rem 3rem; }
+    .step { display:grid; grid-template-columns:48px 1fr; gap:1rem; margin-bottom:1.25rem; }
+    .dot { width:40px; height:40px; border-radius:999px; background:#0ea5e9; color:#fff;
+      display:flex; align-items:center; justify-content:center; font-weight:700; }
+    .card { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:1rem 1.1rem; }
+    .card h3 { margin:0 0 .35rem; font-size:1.05rem; }
+    .card p { margin:0; color:#64748b; font-size:.95rem; }
+    footer { text-align:center; color:#94a3b8; font-size:.85rem; padding:2rem; }
+  </style>
+</head>
+<body>
+  <header><h1>Product roadmap</h1><p>Sample timeline fixture for theme export</p></header>
+  <main>
+    <div class="step"><div class="dot">1</div><div class="card"><h3>Discover</h3><p>Pick a theme pack and offline fixture.</p></div></div>
+    <div class="step"><div class="dot">2</div><div class="card"><h3>Generate</h3><p>Run bloggereasy gen without network deps.</p></div></div>
+    <div class="step"><div class="dot">3</div><div class="card"><h3>Validate</h3><p>Check Blog widget + skin structure.</p></div></div>
+    <div class="step"><div class="dot">4</div><div class="card"><h3>Ship</h3><p>Export and open a bounty PR with screenshot.</p></div></div>
+  </main>
+  <footer>Demo HTML · BloggerEasy timeline_roadmap_page</footer>
+</body>
+</html>
