@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Blog Index Cards</title>
+  <meta name="description" content="Blog index cards HTML fixture for BloggerEasy" />
+  <style>
+    body { margin:0; font-family:system-ui,sans-serif; background:#fff; color:#0f172a; }
+    header { text-align:center; padding:2.5rem 1rem 1rem; border-bottom:1px solid #e2e8f0; }
+    main { max-width:960px; margin:0 auto; padding:1.5rem 1.25rem 3rem;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    article { border:1px solid #e2e8f0; border-radius:14px; overflow:hidden; background:#f8fafc; }
+    .thumb { height:120px; background:linear-gradient(135deg,#bae6fd,#c7d2fe); }
+    .body { padding:1rem; }
+    .body h2 { margin:0 0 .4rem; font-size:1.05rem; }
+    .body p { margin:0; color:#64748b; font-size:.9rem; line-height:1.45; }
+    footer { text-align:center; color:#94a3b8; font-size:.85rem; padding:2rem; }
+    @media (max-width:720px) { main { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header><h1>Latest posts</h1><p>Sample blog index cards for theme export</p></header>
+  <main>
+    <article><div class="thumb"></div><div class="body"><h2>Ship offline fixtures</h2><p>Keep demos green without network assets.</p></div></article>
+    <article><div class="thumb"></div><div class="body"><h2>Validate themes</h2><p>Check Blog widget and skin structure.</p></div></article>
+    <article><div class="thumb"></div><div class="body"><h2>Open a bounty PR</h2><p>Attach a desktop screenshot for evidence.</p></div></article>
+  </main>
+  <footer>Demo HTML · BloggerEasy blog_index_cards_page</footer>
+</body>
+</html>
