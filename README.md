@@ -43,7 +43,7 @@ Image ─┘
 | **URL → theme** | Fetch a public page → structure → validated Blogger XML |
 | **Image → theme** | Sample palette from a mockup/screenshot → theme skin |
 | **HTML file** | Offline local HTML samples or your own page |
-| **Templates** | `simple`, `portfolio`, `news`, `dark`, `magazine`, `docs`, `from-image` |
+| **Templates** | `simple`, `portfolio`, `news`, `dark`, `magazine`, `docs`, `landing`, `from-image` |
 | **Desktop GUI** | Modern **PySide6** app (`bloggereasy-gui`) |
 | **Validate** | Check theme XML before upload |
 | **Offline demo** | `bloggereasy demo` batch-generates all bundled samples |
@@ -129,6 +129,9 @@ bloggereasy gen html -i data/samples/html/portfolio.html -t portfolio
 # From the bundled magazine card-grid template, fully offline
 bloggereasy gen --template magazine --out data/out/magazine.xml
 
+# From the bundled landing page template, fully offline
+bloggereasy gen --template landing --out data/out/landing.xml
+
 # From a public HTML page through the html command
 bloggereasy gen html --url "https://example.com/" --timeout 10 -t portfolio -o data/out/from_url.xml
 ```
@@ -179,10 +182,11 @@ Luôn sao lưu theme hiện tại trước khi upload.
 | `news` | Dense editorial |
 | `magazine` | Magazine-style card grid with left rail, main posts, and right sidebar |
 | `docs` | Documentation-style sidebar + article layout |
+| `landing` | SaaS/product landing page with hero, CTA, and feature cards |
 | `dark` | Dark developer look |
 | `from-image` | Image palette (auto for image mode) |
 
-Bundled HTML samples: `data/samples/html/` (`portfolio`, `news_portal`, `dark_dev`, `magazine`, …).
+Bundled HTML samples: `data/samples/html/` (`portfolio`, `news_portal`, `dark_dev`, `magazine`, `landing_saas`, …).
 
 Respect site Terms of Service when fetching live URLs.
 
